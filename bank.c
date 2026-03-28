@@ -3,7 +3,7 @@
 void bank_details();
 void withdraw_money();
 void add_money();
-void exit();
+void exit_bank();
 void invalid_choice();
 
 int main(){
@@ -18,19 +18,34 @@ int main(){
         scanf("%d",&choice);
 
         if(choice==1)
-        goto bank_details();
-        goto end;
+        goto bank_details;
         else if(choice==2)
-        goto withdraw_money();
-        goto end;
+        goto withdraw_money;
         else if(choice==3)
-        goto add_money();
-        goto end;
+        goto add_money;
         else if(choice==4)
-        goto exit();
-        goto end;
+        goto exit_bank;
         else
-        goto invalid_choice();
+        goto invalid_choice;
+
+        bank_details:
+        bank_details();
+        goto end;
+
+        withdraw_money:
+        withdraw_money();
+        goto end;
+
+        add_money:
+        add_money();
+        goto end;
+
+        exit_bank:
+        exit_bank();
+        goto end;
+
+        invalid_choice:
+        invalid_choice();
         goto end;
         end:
         return 0;
@@ -52,7 +67,7 @@ void add_money()
     printf("\nDeposit Money: ");
 }
 
-void exit()
+void exit_bank()
 {
     printf("\nClosing the bank..");
 }
